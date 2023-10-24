@@ -1,0 +1,14 @@
+
+.example-button-row button,
+.example-button-row a {
+  margin-left: 250px;
+  margin-top:20%;
+  padding : 30px;
+  font-weight: 200;
+  margin-right: 8px;
+  width: 250px;
+}
+
+.example-disabled {
+  display: inline-block;
+}

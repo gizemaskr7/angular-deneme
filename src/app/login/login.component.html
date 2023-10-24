@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Kullanıcı Girişi</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group" [ngClass]="{'has-error': loginForm.get('email')?.invalid && loginForm.get('email')?.touched}">
+      <label for="email">E-mail:</label>
+      <br>
+      <input type="email" id="email" formControlName="email" class="form-control" >
+      <div *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched" class="text-light">
+        E-posta zorunludur.
+      </div>
+      <div *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched" class="text-light">
+        Geçerli bir E-posta adresi girin.
+      </div>
+    </div>
+    <div class="form-group" [ngClass]="{'has-error': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}">
+      <label for="password">Şifre:</label>
+      <br>
+      <input type="password" id="password" formControlName="password" class="form-control" >
+      <div *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched" class="text-light">
+        Şifre zorunludur.
+      </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-warning">Giriş Yap</button>
+    
+    <div *ngIf="loginForm.valid && submitted" class="alert alert-success">
+      Giriş Yapıldı.
+    </div>
+  </form>
+</div>

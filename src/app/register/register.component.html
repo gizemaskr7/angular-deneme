@@ -1,0 +1,66 @@
+<div class="container">
+  <h2>Kayıt Olma Ekranı</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group" [ngClass]="{'has-error': registerForm.get('name')?.invalid && registerForm.get('name')?.touched}">
+      <label for="name">Ad:</label>
+      <br>
+      <input type="text" id="name" formControlName="name" class="form-control">
+      <div *ngIf="registerForm.get('name')?.hasError('required') && registerForm.get('name')?.touched" class="text-light">
+        Ad zorunludur.
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error': registerForm.get('surname')?.invalid && registerForm.get('surname')?.touched}">
+      <label for="surname">Soyad:</label>
+      <br>
+      <input type="text" id="surname" formControlName="surname" class="form-control">
+      <div *ngIf="registerForm.get('surname')?.hasError('required') && registerForm.get('surname')?.touched" class="text-light">
+        Soyad zorunludur.
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error': registerForm.get('email')?.invalid && registerForm.get('email')?.touched}">
+      <label for="email">E-mail:</label>
+      <br>
+      <input type="email" id="email" formControlName="email" class="form-control">
+      <div *ngIf="registerForm.get('email')?.hasError('required') && registerForm.get('email')?.touched" class="text-light">
+        E-posta zorunludur.
+      </div>
+      <div *ngIf="registerForm.get('email')?.hasError('email') && registerForm.get('email')?.touched" class="text-light">
+        Geçerli bir E-posta adresi girin.
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error': registerForm.get('password')?.invalid && registerForm.get('password')?.touched}">
+      <label for="password">Şifre:</label>
+      <br>
+      <input type="password" id="password" formControlName="password" class="form-control">
+      <div *ngIf="registerForm.get('password')?.hasError('required') && registerForm.get('password')?.touched" class="text-light">
+        Şifre zorunludur.
+      </div>
+      <div *ngIf="registerForm.get('password')?.hasError('minlength') && registerForm.get('password')?.touched" class="text-light">
+        Şifre en az 8 karakter olmalıdır.
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error': registerForm.get('password1')?.invalid && registerForm.get('password1')?.touched}">
+      <label for="password1">Şifre Tekrar:</label>
+      <br>
+      <input type="password" id="password1" formControlName="password1" class="form-control">
+      <div *ngIf="registerForm.get('password1')?.hasError('required') && registerForm.get('password1')?.touched" class="text-light">
+        Şifre tekrarı zorunludur.
+      </div>
+      <div *ngIf="registerForm.get('password1')?.value != registerForm.get('password')?.value" class="text-light">
+        Şifreler uyuşmuyor.
+      </div>
+    </div>
+
+    <br>
+    <button type="submit" class="btn btn-dark" [disabled]="!registerForm.valid">Kayıt Ol</button>
+  </form>
+  <br>
+  <div *ngIf="registerForm.valid && submitted" class="alert alert-success">
+    
+    Kaydınız başarıyla oluşturuldu.
+  </div>
+</div>
