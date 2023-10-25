@@ -7,17 +7,29 @@ import { CommunicationService } from './service/communication.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  currentComponent: string = ''; 
+  registerMessage: string = "";
+  childData(message: string) {
+    this.registerMessage = message;
+  }
+ loginMessage:string="";
+ Data(message:string){
+  this.loginMessage=message;
+ }
+  currentComponent: string = '';
 
 
   constructor(private communicationService: CommunicationService) {
-    
+
     this.communicationService.currentComponent$.subscribe((component) => {
       this.currentComponent = component;
     });
   }
 
   ngOnInit() {
-   
+
+  }
+
+  ngOnDestroy(): void {
+
   }
 }

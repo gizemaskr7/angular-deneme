@@ -1,4 +1,5 @@
 <div class="container" appColor>
+  {{login}}
   <h2>Kayıt Olma Ekranı</h2>
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="form-group" [ngClass]="{'has-error': registerForm.get('name')?.invalid && registerForm.get('name')?.touched}">

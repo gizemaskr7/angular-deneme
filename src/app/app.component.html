@@ -7,11 +7,11 @@
       </div>
       <div class="w-50">
         <div >
-          <app-login *ngIf="currentComponent === 'login'"></app-login>
+          <app-login *ngIf="currentComponent === 'login'" [data]="registerMessage" (login)="Data($event)"></app-login>
         </div>
         
         <div >
-          <app-register *ngIf="currentComponent === 'register'"></app-register>
+          <app-register *ngIf="currentComponent === 'register'" (data)="childData($event)" [login]="loginMessage"></app-register>
       </div>
     </div>
     </div>

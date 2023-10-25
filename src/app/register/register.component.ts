@@ -1,14 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter , Input} from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { CommunicationService } from '../service/communication.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
-
+export class RegisterComponent implements OnInit {
+  @Output() data: EventEmitter<any>=new EventEmitter();
+  @Input() login: string = "";
+  ngOnInit(): void {
+    this.data.emit("registerdan gelen veri");
+  }
   registerForm: FormGroup;
   submitted = false;
 
