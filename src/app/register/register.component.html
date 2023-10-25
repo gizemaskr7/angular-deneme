@@ -1,5 +1,5 @@
 <div class="container" appColor>
-  {{login}}
+ <p style="text-align: center;">{{login}}</p> 
   <h2>Kayıt Olma Ekranı</h2>
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="form-group" [ngClass]="{'has-error': registerForm.get('name')?.invalid && registerForm.get('name')?.touched}">
@@ -55,7 +55,14 @@
         Şifreler uyuşmuyor.
       </div>
     </div>
-
+    <br>
+    <div>
+    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+      <option selected  hidden>Lütfen Kayıt Türünüzü Seçiniz..</option>
+      <option value="1">Admin</option>
+      <option value="2">Kullanıcı</option>
+    </select>
+  </div>
     <br>
     <button type="submit" class="btn btn-dark" [disabled]="!registerForm.valid">Kayıt Ol</button>
   </form>

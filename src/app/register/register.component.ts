@@ -7,10 +7,13 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  
+  
   @Output() data: EventEmitter<any>=new EventEmitter();
   @Input() login: string = "";
   ngOnInit(): void {
     this.data.emit("registerdan gelen veri");
+
   }
   registerForm: FormGroup;
   submitted = false;
@@ -22,6 +25,7 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       password1: ['', [Validators.required, Validators.minLength(8)]]
+      
     });
   }
 

@@ -1,5 +1,5 @@
 <div class="container" appColor>
-  <p>{{data}}</p>
+ <p style="text-align: center;">{{data}}</p> 
 
   <h2>Kullanıcı Girişi</h2>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -24,11 +24,7 @@
     </div>
     <div>
     <br>
-      <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-        <option selected disabled hidden>Lütfen Giriş Türünüzü Seçiniz..</option>
-        <option value="1">Admin</option>
-        <option value="2">Kullanıcı</option>
-      </select>
+  
     </div>
     <br>
     <button type="submit" class="btn btn-warning">Giriş Yap</button>

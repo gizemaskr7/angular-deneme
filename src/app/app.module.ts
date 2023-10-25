@@ -12,6 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ColorDirective } from './directives/color.directive';
+import { UserComponent } from './user/user.component';
+import { AdminComponent } from './admin/admin.component';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +23,8 @@ import { ColorDirective } from './directives/color.directive';
     RegisterComponent,
     LoginComponent,
     ColorDirective,
+    UserComponent,
+    AdminComponent,
     
   ],
   imports: [
@@ -29,8 +34,9 @@ import { ColorDirective } from './directives/color.directive';
     MatButtonModule, 
     MatIconModule,
     FormsModule,
-    ReactiveFormsModule 
-    ],
+    ReactiveFormsModule,
+    AppRoutingModule
+      ],
   providers: [],
   bootstrap: [AppComponent]
 })
