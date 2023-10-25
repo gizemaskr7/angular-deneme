@@ -1,4 +1,5 @@
-<div class="container">
+<div class="container" appColor>
+  
   <h2>Kullanıcı Girişi</h2>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="form-group" [ngClass]="{'has-error': loginForm.get('email')?.invalid && loginForm.get('email')?.touched}">
@@ -19,6 +20,14 @@
       <div *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched" class="text-light">
         Şifre zorunludur.
       </div>
+    </div>
+    <div>
+    <br>
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+        <option selected>Lütfen Giriş Türünüzü Seçiniz..</option>
+        <option value="1">Admin</option>
+        <option value="2">Kullanıcı</option>
+      </select>
     </div>
     <br>
     <button type="submit" class="btn btn-warning">Giriş Yap</button>

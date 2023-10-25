@@ -7,13 +7,17 @@ import { CommunicationService } from './service/communication.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  currentComponent: string = 'login'; 
+  currentComponent: string = ''; 
 
-  constructor(private communicationService: CommunicationService) {}
 
-  ngOnInit() {
+  constructor(private communicationService: CommunicationService) {
+    
     this.communicationService.currentComponent$.subscribe((component) => {
       this.currentComponent = component;
     });
+  }
+
+  ngOnInit() {
+   
   }
 }

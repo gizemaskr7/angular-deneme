@@ -11,6 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { ColorDirective } from './directives/color.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     RegisterComponent,
     LoginComponent,
+    ColorDirective,
     
   ],
   imports: [

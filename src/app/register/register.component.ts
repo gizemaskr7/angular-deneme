@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { CommunicationService } from '../service/communication.service';
 
 @Component({
   selector: 'app-register',

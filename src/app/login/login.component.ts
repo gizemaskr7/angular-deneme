@@ -7,9 +7,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  selectedLoginType: string='';
+
   loginForm: FormGroup;
   submitted= false;
 
+  
   constructor(private formBuilder: FormBuilder) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
